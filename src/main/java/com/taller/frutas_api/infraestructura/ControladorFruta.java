@@ -2,6 +2,8 @@ package com.taller.frutas_api.infraestructura;
 
 import com.taller.frutas_api.aplicacion.ServicioFruta;
 import com.taller.frutas_api.dominio.Fruta;
+
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
@@ -20,7 +22,7 @@ public class ControladorFruta {
     }
 
     @PostMapping
-    public Fruta guardarFruta(@RequestBody Fruta fruta) {
+    public Fruta guardarFruta(@Valid @RequestBody Fruta fruta) {
         return servicioFruta.guardarFruta(fruta);
     }
 
